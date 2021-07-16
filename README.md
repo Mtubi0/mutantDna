@@ -3,7 +3,7 @@ Requisitos:
 - Java 11
 - Spring Boot
 
-Para levantar el proyecto raalizar los siguientes pasos:
+Para levantar el proyecto realizar los siguientes pasos:
 1) Ejecutar el comando mvn clean install para generar el compilado del proyecto
 2) Ejecutar la clase MutantDnaApplication para iniciar la aplicación
 
