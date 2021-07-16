@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import ar.com.mutantdna.model.DnaMatrix;
 import ar.com.mutantdna.model.dto.DnaEvaluationRequest;
 import ar.com.mutantdna.service.MutantService;
 

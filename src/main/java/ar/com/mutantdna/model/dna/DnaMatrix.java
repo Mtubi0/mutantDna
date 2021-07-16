@@ -1,4 +1,4 @@
-package ar.com.mutantdna.model;
+package ar.com.mutantdna.model.dna;
 
 import java.util.ArrayList;
 import java.util.List;

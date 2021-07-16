@@ -7,9 +7,9 @@ import java.util.Map;
 
 import org.springframework.core.convert.converter.Converter;
 
-import ar.com.mutantdna.model.DnaBase;
-import ar.com.mutantdna.model.DnaMatrix;
-import ar.com.mutantdna.model.DnaSequence;
+import ar.com.mutantdna.model.dna.DnaBase;
+import ar.com.mutantdna.model.dna.DnaMatrix;
+import ar.com.mutantdna.model.dna.DnaSequence;
 import ar.com.mutantdna.model.dto.DnaEvaluationRequest;
 
 public class DnaEvaluationRequestToDnaMatrixConverter implements Converter<DnaEvaluationRequest, DnaMatrix> {

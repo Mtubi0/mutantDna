@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import ar.com.mutantdna.model.DnaBase;
-import ar.com.mutantdna.model.DnaMatrix;
-import ar.com.mutantdna.model.DnaSequence;
+import ar.com.mutantdna.model.dna.DnaBase;
+import ar.com.mutantdna.model.dna.DnaMatrix;
+import ar.com.mutantdna.model.dna.DnaSequence;
 
 @Service
 public class MutantService {
