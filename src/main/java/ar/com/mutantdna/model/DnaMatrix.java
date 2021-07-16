@@ -54,6 +54,27 @@ public class DnaMatrix {
             diagonalSequences.add(forwardDiagonalSequence);
             diagonalSequences.add(backwardDiagonalSequence);
         }
+        for(var x = 1; x < maxX - 1; x++) {
+
+            var forwardDiagonalSequence = new DnaSequence();
+            var backwardDiagonalSequence = new DnaSequence();
+            Integer offset = 0;
+
+            for(var y = maxY - 1; y > 0; y--) {
+
+                DnaBase dnaBase = sequences.get(y).getDnaBase(x + offset);             
+                if(!dnaBase.equals(DnaBase.NullBase)) {
+                    backwardDiagonalSequence.addDnaBase(dnaBase);
+                }
+                dnaBase = sequences.get(y).getDnaBase(x - offset);             
+                if(!dnaBase.equals(DnaBase.NullBase)) {
+                    forwardDiagonalSequence.addDnaBase(dnaBase);
+                }
+                offset++;
+            }
+            diagonalSequences.add(forwardDiagonalSequence);
+            diagonalSequences.add(backwardDiagonalSequence);
+        }
         return diagonalSequences;
     }
 

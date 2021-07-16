@@ -12,21 +12,22 @@ import ar.com.mutantdna.model.DnaSequence;
 @Service
 public class MutantService {
 
-    private static Integer matchNumber = 4;
+    private static Integer matchNumber = 3;
 
     public Boolean evaluate(DnaMatrix dnaMatrix) {
 
         boolean evaluating = true;
         Integer matches = 0;
-        List<DnaSequence> sequences = dnaMatrix.getVerticalSequences();
+        List<DnaSequence> sequences = dnaMatrix.getSequences();
+        sequences.addAll(dnaMatrix.getVerticalSequences());
         sequences.addAll(dnaMatrix.getDiagonalSequences());
         
         Iterator<DnaSequence> it = sequences.iterator();
 
-        while(evaluating || it.hasNext()) {
+        while(evaluating && it.hasNext()) {
 
             DnaSequence dnaSequence = it.next();
-            matches += countRepeatedDnaBase(dnaSequence, 4);
+            matches += countRepeatedDnaBase(dnaSequence, matchNumber);
 
             if(matches >= matchNumber) {
                 evaluating = false;
@@ -37,7 +38,7 @@ public class MutantService {
 
     private Integer countRepeatedDnaBase(DnaSequence sequence, Integer times) {
 
-        Integer timesRepeated = 0;
+        Integer timesRepeated = 1;
         Integer totalRepeated = 0;
         DnaBase actualComparison = DnaBase.NullBase;
 
@@ -50,9 +51,10 @@ public class MutantService {
             }
             else {
                 actualComparison = dnaBase;
+                timesRepeated = 1;
             }
 
-            if(timesRepeated >= times) {
+            if(timesRepeated >= times && !actualComparison.equals(DnaBase.NullBase)) {
                 totalRepeated++;
             }
         }
